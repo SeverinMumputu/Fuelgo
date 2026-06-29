@@ -1,0 +1,90 @@
+      body { font-family: 'Inter', sans-serif; overflow: hidden; background-color: #F5F5F7; }
+        
+        /* Glassmorphism premium */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .dark-glass {
+            background: rgba(29, 29, 31, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .slide-up { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .slide-up-hidden { transform: translateY(120%); }
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Map Tweaks pour cacher les logos par défaut et faire premium */
+        .leaflet-control-attribution { display: none !important; }
+        .leaflet-control-zoom { border: none !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; border-radius: 12px !important; overflow: hidden; margin-right: 15px !important; margin-bottom: 20px !important;}
+        .leaflet-control-zoom a { color: #1D1D1F !important; background: rgba(255,255,255,0.9) !important; backdrop-filter: blur(10px); }
+
+        /* Custom 3D Yango-style Marker */
+        .station-marker {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            transform: perspective(200px) rotateX(20deg); /* Effet 3D */
+            transition: transform 0.2s ease;
+        }
+        .station-marker:hover { transform: perspective(200px) rotateX(0deg) scale(1.1); z-index: 1000 !important; }
+        .marker-pin {
+            width: 32px;
+            height: 40px;
+            background: linear-gradient(135deg, #0071E3, #004494);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: -4px 4px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+        }
+        .marker-icon {
+            transform: rotate(45deg);
+            color: white;
+            font-size: 14px;
+        }
+        .marker-shadow {
+            width: 20px;
+            height: 8px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -5px;
+            left: 6px;
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        /* User Location Pulse */
+        .user-loc-marker { position: relative; display: flex; justify-content: center; align-items: center; }
+        .pulse-ring {
+            position: absolute; width: 40px; height: 40px;
+            background: rgba(0, 113, 227, 0.4);
+            border-radius: 50%; animation: pulse 2s infinite ease-out;
+        }
+        .pulse-core {
+            position: relative; width: 16px; height: 16px;
+            background: #0071E3; border: 3px solid white; border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* SVG Route animation */
+        .route-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: dash 2s linear forwards; }
+        @keyframes dash { to { stroke-dashoffset: 0; } }
