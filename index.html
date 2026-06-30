@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Optimus - Localisation Carburant Kinshasa</title>
+    <title>Fuelgo - Localisation Carburant Kinshasa</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,7 +56,7 @@
                 <div class="w-16 h-16 md:w-20 md:h-20 bg-apple-dark rounded-3xl mx-auto flex items-center justify-center shadow-premium mb-4 md:mb-6">
                     <i class="ph ph-gas-pump text-3xl md:text-4xl text-white"></i>
                 </div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2">Optimus</h1>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2">Fuelgo</h1>
                 <p class="text-gray-500 font-medium text-sm md:text-base">Carburant en temps réel à Kinshasa.</p>
             </div>
 
@@ -100,10 +100,13 @@
                 <button id="btn-filter-essence" onclick="toggleFilter('essence')" class="glass text-apple-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shadow-sm transition-all">
                     <i class="ph-fill ph-gas-pump"></i> Essence
                 </button>
-                <button id="btn-filter-gazoil" onclick="toggleFilter('gazoil')" class="glass text-apple-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap shadow-sm transition-all hover:bg-white">
+                <button id="btn-filter-gazoil" onclick="toggleFilter('gazoil')" class="glass text-apple-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap shadow-sm transition-all hover:bg-white flex items-center gap-1.5 sm:gap-2">
+                    <i class="ph-fill ph-drop"></i>
                     Gazoil
                 </button>
-                <button id="btn-filter-247" onclick="toggleFilter('open247')" class="glass text-apple-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap shadow-sm transition-all hover:bg-white">
+
+                <button id="btn-filter-247" onclick="toggleFilter('open247')" class="glass text-apple-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap shadow-sm transition-all hover:bg-white flex items-center gap-1.5 sm:gap-2">
+                    <i class="ph-fill ph-clock-clockwise"></i>
                     Ouvert 24/7
                 </button>
             </div>
@@ -145,6 +148,8 @@
                         <p class="text-[10px] sm:text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Horaires</p>
                         <p id="panel-hours" class="text-lg sm:text-xl font-bold text-apple-dark">24/7</p>
                     </div>
+                    <!-- Autres infos -->
+                    <div id="panel-services"></div>
                 </div>
 
                 <!-- Disponibilité / Stock -->
@@ -179,6 +184,39 @@
             </div>
         </div>
     </div>
+
+    <!-- Popup Premium -->
+<div id="premium-popup"
+     class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/40 backdrop-blur-sm">
+
+    <div class="bg-white rounded-3xl shadow-2xl w-[92%] max-w-md p-6 relative animate-popup">
+
+        <!-- Croix -->
+        <button onclick="closePopup()"
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 transition flex items-center justify-center">
+
+            <i class="ph ph-x text-xl"></i>
+
+        </button>
+
+        <!-- Icône -->
+        <div class="w-16 h-16 rounded-full bg-blue-100 mx-auto flex items-center justify-center mb-5">
+
+            <i class="ph-fill ph-map-pin text-3xl text-apple-blue"></i>
+
+        </div>
+
+        <h3 class="text-xl font-bold text-center mb-3">
+            Localisation
+        </h3>
+
+        <p id="popup-message"
+           class="text-center text-gray-600 leading-relaxed">
+        </p>
+
+    </div>
+
+</div>
 
     <!-- Scripts Leaflet & Logique Applicative -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

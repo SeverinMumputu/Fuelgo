@@ -26,6 +26,21 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Barre de défilement premium style Apple */
+        .premium-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .premium-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .premium-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 9999px;
+        }
+        .premium-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
         /* Map Tweaks pour cacher les logos par défaut et faire premium */
         .leaflet-control-attribution { display: none !important; }
         .leaflet-control-zoom { border: none !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; border-radius: 12px !important; overflow: hidden; margin-right: 15px !important; margin-bottom: 20px !important;}
@@ -33,7 +48,7 @@
         
         /* Ajustement Map pour Mobile (éviter de cacher les contrôles sous les boutons) */
         @media (max-width: 768px) {
-            .leaflet-control-zoom { margin-bottom: 100px !important; margin-right: 10px !important; }
+            .leaflet-control-zoom { margin-bottom: 120px !important; margin-right: 10px !important; }
         }
 
         /* Custom 3D Yango-style Marker */
@@ -94,3 +109,23 @@
         /* SVG Route animation */
         .route-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: dash 2s linear forwards; }
         @keyframes dash { to { stroke-dashoffset: 0; } }
+
+        @keyframes popupScale {
+
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+.animate-popup{
+
+    animation:popupScale .25s ease;
+
+}
