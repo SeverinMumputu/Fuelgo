@@ -1,4 +1,5 @@
-      body { font-family: 'Inter', sans-serif; overflow: hidden; background-color: #F5F5F7; }
+
+        body { font-family: 'Inter', sans-serif; overflow: hidden; background-color: #F5F5F7; }
         
         /* Glassmorphism premium */
         .glass {
@@ -29,6 +30,11 @@
         .leaflet-control-attribution { display: none !important; }
         .leaflet-control-zoom { border: none !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; border-radius: 12px !important; overflow: hidden; margin-right: 15px !important; margin-bottom: 20px !important;}
         .leaflet-control-zoom a { color: #1D1D1F !important; background: rgba(255,255,255,0.9) !important; backdrop-filter: blur(10px); }
+        
+        /* Ajustement Map pour Mobile (éviter de cacher les contrôles sous les boutons) */
+        @media (max-width: 768px) {
+            .leaflet-control-zoom { margin-bottom: 100px !important; margin-right: 10px !important; }
+        }
 
         /* Custom 3D Yango-style Marker */
         .station-marker {
