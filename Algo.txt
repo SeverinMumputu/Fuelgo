@@ -1,0 +1,131 @@
+Pour viser plus et se démarquer de la concurrence, Optimus doit exploiter ou tracer un chemin différent 
+qui le valorise encoore plus. En effet, au-delà d'être une plateforme qui oriente le conducteur à 
+la station la plus proche; Optimus souhaite rajouter des nouveaux services entre autres : 
+- la comparaison des prix du carburant entre stations;
+- la commande(livraison) du carburant pour les pannes sêches qui surviennent pendant la circulation;
+- le dépannage 24H/24 pour apporter de l'aide aux conducteurs en cas de panne.
+
+Le but est de rajouter ces nouveaux services dans Optimus. C'est-à-dire lorsque l'utilisateur clique sur l'icône User à côté de 
+la barre de recherche, un menu premium dynamique avec effet de transition apparaît avec ces fonctionalités :
+- comparaison des prix 
+- commande du carburant 
+- Sos dépannage 24H/24
+- station la plus proche 
+
+Détails sur les sections :
+
+1/comparaison des prix : un filtrage des infos très dynamique des sélections à l'aide d'images(icônes svg) et peu de texte dans le but 
+de simplifier l'utilisation. 
+Un design premium de filtrage par sélection pour permettre une fois arrivée sur cette section des prix de voir ces étapes :
+1. Sélection des communes 
+2. Sélection de type de carburant(Essence,gazoil)
+3. Chargement animé et début filtrage 
+4. Résultats, affichage des prix du carburant sélectionné selon les stations de la commune  
+
+2/Commande de carburant :
+Le but ici en cas de pannes sèches, l'utilisateur ne doit pas remplir un long formulaire. L'idéal est de limiter le processus à 6 étapes avec des 
+champs de sélections d'images et textes titrés.
+
+Voici le parcours utilisateur :
+Etape 1 : choisir le carburant.
+L'utilisateur doit sélectionner entre(essence, diesel, gazoil)
+
+Etape 2 : indiquer la quantité.
+L'utilisateur doit choisir (5L, 10, 15L, 20L, autre quantité)
+
+Etape 3 : localisation 
+La plateforme détecte automatiquement la position GPS. 
+L'utilisateur peut aussi :
+- utiliser sa position actuelle
+- déplacer un marqueur sur la carte 
+- insérer son adress;
+
+Etape 4 : informations sur le véhicule de l'utilisateur.
+Le but est d'avoir quelques informations utiles pour apporter notre aide sur le type de véhicule :
+- moto
+- voiture
+- camion
+- Bus 
+- Commentaire(facultatif mais très important pour plus de précisions par "je suis devant la banque Equity BCDC, véhicule bleu")
+
+Etape 5 : choisir le mode de livraison. 
+La platerforme Optimus doit afficher à cette étape ses infos :
+- la station qui livrera
+- la distance du trajet 
+- le temps estimé pour la livraison 
+- le prix du carburat 
+- le frais de livraison
+- le total à payer 
+L'utilisateur doit choisir ensuite :
+- Livraison standard
+- Livraiso urgente(plus chère)
+
+Etape 6 : Paiement et confirmation.
+Mode de paiement :
+- FidePay
+- Carte bancaire
+- Paiement à la livraison.
+Puis un bouton "Confirmer la commande"
+
+Après la confirmation, l'utiliisateur voit un écran de suivi en temps réel avec :
+- commande reçue
+- préparation de carburant
+- livreur en route 
+- position du livreur sur la carte 
+- temps restnt estimé 
+- bouton pour appeler le livreur 
+annuler la commande 
+
+3/Section Sos dépannage 24H/24 :
+Pour ce service SOS dépanage 24H/24, le parcours doit être encore plus court que celui de la commade de carburant. L'objectif est qu'un conducteur 
+puisse demander de l'aide en 30 à 45 secondes en mettant en place ces étapes :
+
+Etape 1 : quel est votre problème ?
+Au lieu d'une liste, Optimus affichera des icônes SVG illustrées avec titres:
+- batterie déchargée 
+- pneu crevé 
+- panne mécanique
+- remorquage 
+- clés enfermées dans le véhicule 
+- pannes de carburant 
+Chaque icône est cliquable
+
+Etape 2 : Où êtes-vous ?
+L'utilisateur doit choisir entre :
+- utiliser la position actuelle (GPS) ou 
+- insérer une adresse
+
+Etape 3 : Votre véhicule
+L'utilisateur choisit une image :
+- voiture 
+- moto 
+- camion 
+- bus 
+puis doit préciser à l'aide d'une liste :
+- petite voiture 
+- SUV 
+- Utilitaire 
+- Camion léger 
+- poids lourd 
+
+Etape 4 : confirmation 
+La plateforme affiche directement :
+- le dépanneur disponible le plus proche 
+- le délai estimé 
+- le coût estimé 
+- un bouton Demander une intervention
+
+Après validation, le conducteur accède à un suivi en temps réel :
+- du dépanneur confirmé 
+- en route 
+- position du dépanneur sur la carte 
+temps estimé d'arrivée
+- appeler le dépanneur 
+- annuler la commande 
+
+4/ Section station la plus proche :
+une fois que l'utilisateur clique sur ce lien, il est directement rédirigé vers la carte plus précisément dans l'interface principale.
+
+Il est nécessaire d'insister sur le fait que les ajouts de nouveaux services font office de simulation. 
+L'objectif est de préparer la plateforme à recevoir les données réelles une fois le projet validé. 
+Ces ajouts doivent reposer sur un desig premium et épuré pour faciliter l'utilisation en quelques clics d'Optimus. 
